@@ -48,6 +48,7 @@ return {
 				{ "<leader>d", group = "debug" },
 				{ "<leader>g", group = "git" },
 				{ "<leader>i", group = "inlay hints" },
+				{ "<leader>j", group = "java" },
 				{ "<leader>o", group = "organizar" },
 			},
 		},

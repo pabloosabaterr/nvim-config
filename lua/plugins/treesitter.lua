@@ -1,6 +1,6 @@
 local parsers = {
   "go", "gomod", "gosum", "gowork", "gotmpl",
-  "c", "cpp", "rust", "make",
+  "c", "cpp", "rust", "make", "java",
   "javascript", "typescript", "tsx",
   "lua", "vim", "vimdoc", "query", "regex",
   "markdown", "markdown_inline",
@@ -10,7 +10,7 @@ local parsers = {
 
 local filetypes = {
   "go", "gomod", "gosum", "gowork", "gotmpl",
-  "c", "cpp", "rust", "make",
+  "c", "cpp", "rust", "make", "java",
   "javascript", "javascriptreact", "typescript", "typescriptreact",
   "lua", "vim", "help", "query", "markdown",
   "json", "yaml", "toml", "sh",
