@@ -1,4 +1,4 @@
--- Java con jdtls (brew install jdtls; necesita JDK 21+)
+-- Java con jdtls (macOS: brew install jdtls; Arch: AUR jdtls; necesita JDK 21+)
 -- Debug y tests opcionales: si existen los bundles de java-debug y vscode-java-test
 -- en ~/.local/share/java se cargan solos (ver README de nvim-jdtls).
 

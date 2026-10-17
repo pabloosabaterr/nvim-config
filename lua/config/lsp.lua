@@ -25,7 +25,7 @@ vim.lsp.config("denols", {
 })
 
 vim.lsp.config("gopls", {
-  cmd = { vim.fn.expand("~/go/bin/gopls") },
+  cmd = { vim.fn.exepath("gopls") ~= "" and "gopls" or vim.fn.expand("~/go/bin/gopls") },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
   root_markers = { "go.work", "go.mod", ".git" },
   settings = {
@@ -45,7 +45,7 @@ vim.lsp.config("gopls", {
 })
 
 vim.lsp.config("asm_lsp", {
-  cmd = { vim.fn.expand("~/.cargo/bin/asm-lsp") },
+  cmd = { vim.fn.exepath("asm-lsp") ~= "" and "asm-lsp" or vim.fn.expand("~/.cargo/bin/asm-lsp") },
   filetypes = { "arm64asm" },
   root_markers = { ".git" },
 })

@@ -1,11 +1,13 @@
--- C, C++, Rust y ARM64 con lldb-dap (viene con Xcode / Command Line Tools)
+-- C, C++, Rust y ARM64 con lldb-dap (macOS: Xcode / Command Line Tools; Arch: pacman -S lldb)
 -- Go con delve (go install github.com/go-delve/delve/cmd/dlv@latest)
 
 local function lldb_dap_path()
   local p = vim.fn.exepath("lldb-dap")
   if p ~= "" then return p end
-  local out = vim.fn.system({ "xcrun", "--find", "lldb-dap" })
-  if vim.v.shell_error == 0 then return vim.trim(out) end
+  if vim.fn.has("mac") == 1 then
+    local out = vim.fn.system({ "xcrun", "--find", "lldb-dap" })
+    if vim.v.shell_error == 0 then return vim.trim(out) end
+  end
   return "lldb-dap"
 end
 

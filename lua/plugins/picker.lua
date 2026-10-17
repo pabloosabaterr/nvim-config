@@ -1,4 +1,4 @@
--- Requiere el binario fzf (brew install fzf) y ripgrep
+-- Requiere el binario fzf (macOS: brew install fzf; Arch: pacman -S fzf) y ripgrep
 return {
   "ibhagwan/fzf-lua",
   cmd = "FzfLua",

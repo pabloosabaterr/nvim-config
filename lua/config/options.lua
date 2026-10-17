@@ -13,7 +13,8 @@ o.colorcolumn = "+1"
 o.signcolumn = "yes"
 o.winborder = "rounded"
 o.mouse = ""
-o.clipboard = "unnamed"
+-- macOS: "unnamed" (pbcopy). Linux: "unnamedplus" (wl-clipboard o xclip)
+o.clipboard = vim.fn.has("mac") == 1 and "unnamed" or "unnamedplus"
 
 o.ignorecase = true
 o.smartcase = true
