@@ -1,19 +1,31 @@
 local map = vim.keymap.set
+local append = vim.fn.append
+local line = vim.fn.line
 
--- Búsqueda
+-- Search
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
-map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Quitar resaltado" })
+map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
--- Quickfix y compilación
-map("n", "<leader>q", "<cmd>cclose<CR>", { desc = "Cerrar quickfix" })
-map("n", "<leader>m", "<cmd>make<CR>", { desc = "make" })
+-- Quickfix & compilation
+map("n", "<leader>q", "<cmd>cclose<CR>", { desc = "Close quickfix" })
+map("n", "<leader>m", "<cmd>make<CR>", { desc = "Make" })
 
--- Navegación
-map("n", "gb", "<C-o>", { desc = "Volver atrás" })
+-- Navigation
+map("n", "gb", "<C-o>", { desc = "Go back" })
 
--- Salir de insert/terminal
+-- Exit insert/terminal mode
 map("i", "jj", "<Esc>")
+map("i", "JJ", "<Esc>")
 map("t", "jj", [[<C-\><C-n>]])
 
--- Diagnósticos ([d y ]d ya vienen de serie)
-map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnóstico de la línea" })
+-- Diagnostics
+map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+
+-- Insertions
+map("n", "<CR>", function()
+    append(line("."), "")
+end)
+
+map("n", "<S-CR>", function()
+    append(line(".") - 1, "")
+end)
